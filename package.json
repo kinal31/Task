@@ -1,0 +1,18 @@
+{
+  "name": "video-sdk-file-explorer",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A framework-independent File Explorer SDK (pure JS) with a React UI. Day 1: the SDK.",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "demo": "node examples/node-demo.js"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4"
+  }
+}

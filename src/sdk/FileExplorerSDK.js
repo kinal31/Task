@@ -381,7 +381,7 @@ export class FileExplorerSDK {
    *
    * Outside a transaction: applies the command, records it in history, and
    * bumps version + notifies via `_bump`.
-   * Inside a transaction (Phase 8): applies and buffers; history push and
+   * Inside a transaction: applies and buffers; history push and
    * notification happen once, when the transaction commits.
    *
    * Validation must already have happened — this method never throws for

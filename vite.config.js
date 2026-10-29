@@ -1,12 +1,32 @@
 import { defineConfig } from 'vitest/config';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
+  plugins: [react()],
   test: {
     globals: true,
-    environment: 'node',
-    include: ['tests/**/*.test.{js,jsx}'],
-    setupFiles: ['tests/setup.js'],
-    // Day 2 note: UI tests under tests/ui/ will run with `environment: 'jsdom'`
-    // via test.projects once @testing-library deps are installed.
+    // Everything is defined per-project below so the UI project never
+    // inherits the SDK project's include/setup (and vice versa).
+    projects: [
+      {
+        extends: true,
+        test: {
+          name: 'sdk',
+          environment: 'node',
+          include: ['tests/sdk/**/*.test.{js,jsx}'],
+          setupFiles: ['tests/setup.js'],
+        },
+      },
+      {
+        extends: true,
+        test: {
+          name: 'ui',
+          environment: 'jsdom',
+          include: ['tests/ui/**/*.test.{js,jsx}'],
+          setupFiles: ['tests/ui-setup.js'],
+          globals: true,
+        },
+      },
+    ],
   },
 });

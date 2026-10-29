@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "A framework-independent File Explorer SDK (pure JS) with a React UI. Day 1: the SDK.",
+  "description": "A file explorer with a framework-independent JavaScript SDK (pure JS) and a React UI.",
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest",
@@ -13,6 +13,16 @@
     "demo": "node examples/node-demo.js"
   },
   "devDependencies": {
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.8",
+    "@vitejs/plugin-react": "^4.7.0",
+    "jsdom": "^29.1.1",
     "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
   }
 }
